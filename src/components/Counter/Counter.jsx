@@ -7,7 +7,7 @@ export default function CounterWithHooks () {
     // const count = arrayTal[0];
     // const setCount = arrayTal[1];
 
-    const [count, setCount] = useState(useParams().initialCount);
+    const [count, setCount] = useState(Number(useParams().initialCount));
     // const [count, setCount] = useState(0);
 
 
