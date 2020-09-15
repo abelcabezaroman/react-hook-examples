@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
-import Counter from "./components/Counter/Counter";
-import HelloProps from "./components/HelloProps/HelloProps";
-import ListProps from "./components/ListProps/ListProps";
-import { CounterEffect } from "./components/CounterEffect/CounterEffect";
+import CounterContext from './contexts/CounterContext'
+import CounterContextPlusComp from "./components/CounterContextPlusComp/CounterContextPlusComp";
 
 function App () {
+    const [count, setCount] = useState(0);
     return (
         <div className="App">
             <div className="App-header">
@@ -20,7 +19,16 @@ function App () {
                 {/*}}/>*/}
 
                 {/*<GalleryList/>*/}
-                <CounterEffect/>
+                {/*<CounterEffect/>*/}
+
+                <CounterContext.Provider value={[count, setCount]}>
+                    <CounterContextPlusComp/>
+                </CounterContext.Provider>
+
+                <CounterContext.Provider value={[count, setCount]}>
+                    <CounterContextPlusComp/>
+                </CounterContext.Provider>
+
             </div>
         </div>
     );

@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import './Counter.scss';
-import { useParams } from "react-router-dom";
 
 export default function CounterWithHooks () {
     // const arrayTal =  useState(0);
     // const count = arrayTal[0];
     // const setCount = arrayTal[1];
 
-    const [count, setCount] = useState(Number(useParams().initialCount));
+    const [count, setCount] = useState(0);
     // const [count, setCount] = useState(0);
 
 

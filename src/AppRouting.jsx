@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-d
 import GalleryList from "./components/GalleryList/GalleryList";
 import Menu from "./components/Menu/Menu";
 import ListProps from "./components/ListProps/ListProps";
+import { CounterRouterHooks } from "./components/CounterRouterHooks/CounterRouterHooks";
 
 function App () {
     return (
@@ -15,7 +16,8 @@ function App () {
                     <Menu/>
                     <Switch>
                         <Route path="/counter/:initialCount">
-                            <Counter/>
+                            {/*<Counter/>*/}
+                            <CounterRouterHooks/>
                         </Route>
                         <Redirect from='/counter' to='/counter/0'/>
                         <Route path="/hello">
@@ -33,7 +35,6 @@ function App () {
                             <Counter/>
                         </Route>
                     </Switch>
-
                 </div>
             </div>
         </Router>
