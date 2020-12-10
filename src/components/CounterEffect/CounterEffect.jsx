@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-export const CounterEffect = function () {
+export default function CounterEffect(){
     const [count, setCount] = useState(0);
 
-    // const [counter, setCounter] = useState(props.initialValue);
+    // const [counter, setCounter] = useState(10);
 
     // function getUsers (){
     //     // fetch()
@@ -12,21 +12,22 @@ export const CounterEffect = function () {
 
 
     const alertMe = () => {
-        console.log('Hey!');
+        console.log('Hello!');
 
         return () => {
             console.log('Bye!')
         }
     }
-
+    
 
     useEffect(alertMe, [count]);
-    //
+    
     // useEffect(() => console.log("mount"), []);
     // useEffect(() => console.log("will update count"), [count]);
+    // useEffect(() => {setCount(10)}, [count]); // MAL
     // useEffect(() => console.log("will update any"));
     // useEffect(() => () => console.log("will update count or unmount"), [count]);
-    // useEffect(() => () => console.log("unmount"), []);
+    // useEffect(() => () => console.log("Bye!"), []);
 
     // useEffect(() => console.log("mount"))
 
@@ -43,3 +44,5 @@ export const CounterEffect = function () {
     )
 };
 
+// const a = () => {return 5 + 5}
+// const b = () => 5 + 5

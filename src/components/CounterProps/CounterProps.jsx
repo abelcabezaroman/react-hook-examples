@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import './Counter.scss';
+import './CounterProps.scss';
 
-export default function CounterWithHooks () {
+export default function CounterProps (props) {
     // const arrayTal =  useState(0);
     // const count = arrayTal[0];
     // const setCount = arrayTal[1];
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(props.defaultNumber);
 
     // const valoresIniciales = ['Abel', 'Carlos']
     // const [variable1, variable2] = valoresIniciales;
